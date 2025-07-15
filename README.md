@@ -82,12 +82,8 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ## System Schematics  
 
-### ESP8266 Swarm Node Schematic  
+### Swarm Node Schematic  
 
-![ESP8266 Swarm Schematic](images/esp8266_swarm_schematic.png)
+![ Swarm Schematic](images/esp8266_swarm_schematic.png)
 
-### Raspberry Pi GPIO Wiring Diagram  
 
-![Raspberry Pi Wiring Diagram](images/raspberry_pi_wiring.png)
-
----
