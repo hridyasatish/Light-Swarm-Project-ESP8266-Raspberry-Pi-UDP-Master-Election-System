@@ -84,6 +84,6 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ### Swarm Node Schematic  
 
-![ Swarm Schematic](images/esp8266_swarm_schematic.png)
+![ Swarm Schematic](Swarm_Schematics.png)
 
 
