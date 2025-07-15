@@ -1,50 +1,48 @@
-# Light Swarm Project – Distributed Master Election System Using ESP8266 and Raspberry Pi  
-
-Author: Hridya Satish  
+# Light Swarm Project – Distributed Master Election System Using ESP8266 and Raspberry Pi
 
 ---
 
-##  Project Overview  
+## Project Overview
 
-The Light Swarm project implements a distributed master election protocol using a swarm of ESP8266 microcontrollers and a Raspberry Pi controller. Each ESP8266 module senses ambient light using a photoresistor and periodically broadcasts its reading over Wi-Fi using UDP multicast.  
+The Light Swarm project implements a distributed master election protocol using a swarm of ESP8266 microcontrollers and a Raspberry Pi controller. Each ESP8266 module senses ambient light using a photoresistor and periodically broadcasts its reading over Wi-Fi using UDP multicast.
 
-The Raspberry Pi monitors the swarm, identifies which device reports the highest light reading (the "master"), controls status LEDs for visualization, logs master transitions into CSV files, and generates real-time graphical plots using Matplotlib.  
+The Raspberry Pi monitors the swarm, identifies which device reports the highest light reading (the "master"), controls status LEDs for visualization, logs master transitions into CSV files, and generates real-time graphical plots using Matplotlib.
 
-This system is designed as part of the ECPS 216: Embedded Systems Networking course and demonstrates key embedded system networking concepts such as real-time UDP communication, multicast group management, master election algorithms, and embedded data visualization.
+This system demonstrates key embedded system networking concepts such as real-time UDP communication, multicast group management, master election algorithms, and embedded data visualization.
 
 ---
 
-## System Architecture  
+## System Architecture
 
-### ESP8266 Nodes  
+### ESP8266 Nodes
 
 - **Function:**  
-  Each ESP8266 device reads a light sensor value, adjusts its external LED brightness through PWM, and broadcasts its status.  
+  Each ESP8266 device reads a light sensor value, adjusts its external LED brightness through PWM, and broadcasts its status.
 - **Master Election Rule:**  
-  The device with the highest light sensor value among all active nodes is elected as the master.  
+  The device with the highest light sensor value among all active nodes is elected as the master.
 - **Control Indicators:**  
   - External LED (PWM): Displays brightness proportional to light intensity.  
-  - Onboard LED: Turns ON if the device is elected as master.  
+  - Onboard LED: Turns ON if the device is elected as master.
 
-### Raspberry Pi Controller  
+### Raspberry Pi Controller
 
 - **Function:**  
-  Listens for packets from ESP8266 nodes, identifies the master, controls GPIO-connected LEDs, logs events, and plots real-time graphs.  
+  Listens for packets from ESP8266 nodes, identifies the master, controls GPIO-connected LEDs, logs events, and plots real-time graphs.
 - **Control Indicators:**  
   - Red, Yellow, Green LEDs: Indicate which ESP8266 is currently the master.  
-  - White LED: Indicates swarm reset activity.  
+  - White LED: Indicates swarm reset activity.
 - **User Input:**  
-  - Push Button: Toggles monitoring on/off and sends reset commands to the swarm.  
+  - Push Button: Toggles monitoring on/off and sends reset commands to the swarm.
 
 ---
 
-## Communication Protocol  
+## Communication Protocol
 
 - **Transport:** UDP Multicast  
 - **Multicast Group:** 239.0.0.1  
 - **Port:** 3000  
 
-### Packet Format  
+### Packet Format
 
 | Byte Index | Field             | Description                                  |
 |------------|------------------|----------------------------------------------|
@@ -57,9 +55,9 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ---
 
-## 🔧 Hardware Configuration  
+## 🔧 Hardware Configuration
 
-### ESP8266 Pin Setup  
+### ESP8266 Pin Setup
 
 | Pin            | Purpose                          |
 |----------------|----------------------------------|
@@ -68,7 +66,7 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 | LED_BUILTIN    | Master Indicator (Onboard LED)   |
 | VCC/GND        | Power Supply (3.3V, Ground)      |
 
-### Raspberry Pi GPIO Pin Mapping  
+### Raspberry Pi GPIO Pin Mapping
 
 | GPIO Pin  | Component         | Purpose                          |
 |-----------|-------------------|----------------------------------|
@@ -80,15 +78,21 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ---
 
-## System Schematics  
+## System Schematics
 
-### Swarm Node Schematic  
+### Swarm Node Schematic
 
-![ Swarm Schematic](Swarm_Schematics.png)
+![Swarm Schematic](Swarm_Schematics.png)
 
-## Demonstration Video  
+---
+
+## Demonstration Video
 
 [![Watch the video](images/swarm_demo_thumbnail.png)](https://drive.google.com/file/d/1YktnCULhcuZZW57g5Q7NGHU0GC6S8-v_/view?usp=drive_link)
 
+---
 
+## Notes
 
+- No personal information, Wi-Fi credentials, or device-specific names are present in this file.
+- Placeholder SSID and password values should be defined in the ESP8266 code outside of this README.
