@@ -14,7 +14,7 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ---
 
-## ⚙ System Architecture  
+## System Architecture  
 
 ### ESP8266 Nodes  
 
@@ -38,7 +38,7 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ---
 
-## 📡 Communication Protocol  
+## Communication Protocol  
 
 - **Transport:** UDP Multicast  
 - **Multicast Group:** 239.0.0.1  
@@ -80,7 +80,7 @@ This system is designed as part of the ECPS 216: Embedded Systems Networking cou
 
 ---
 
-## 🖼️ System Schematics  
+## System Schematics  
 
 ### ESP8266 Swarm Node Schematic  
 
